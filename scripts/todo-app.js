@@ -27,6 +27,8 @@ document.querySelector('#new-todo').addEventListener('submit', (e) => {
         saveTodos(todos)
         renderTodos(todos, filters)
         e.target.elements.text.value = ''
+    } else {
+        alert('Data cannot be null')
     }
 })
 
