@@ -1,23 +1,4 @@
-/*
-
-// Colors
-$off-black: #20222b;
-$dark-blue: #333745;
-$blue: #3c4251;
-$light-blue: #464b5e;
-$off-white: #a5afd7;
-$purple: #8357c5;
-// Spacing
-$s-size: 1.2rem;
-$m-size: 1.6rem;
-$l-size: 3.2rem;
-$xl-size: 4.8rem;
-$desktop-breakpoint: 45rem;
-
-*/
-
-/* Base Styles */
-
+/* Main styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,10 +10,10 @@ html {
 }
 
 body {
-    background: #2B292E;
-  color: #fafafa;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
+    background:#3d3941;
+    color: #fafafa;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
 }
 
 button {
@@ -54,29 +35,35 @@ a {
 /* Header */
 
 .header {
-  background: #6F439C;
-  color:white;
-  padding: 1.6rem 0;
+    background: royalblue;
+    border-bottom: 1.5px solid #4B0082;
+    color: #fafafa;
+    padding: 3rem 0;
+    text-align: center;
 }
 
 .header__title {
-  font-size: 3.2rem;
-  margin-bottom: .4rem;
+    font-family: 'Spectral', serif;
+    font-size: 4rem;
+    margin-bottom: .4rem;
+}
+
+.header__title::first-letter {
+    font-size: 7rem;
+    color:#4B0082;
 }
 
 .header__subtitle {
-  /* color: #777; */
-  font-size: 1.6rem;
-  font-weight: 300;
+    color: #4B0082;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 /* Actions Bar */
 
 .actions {
     background-color: #353239;
-    /* border-bottom: 1px solid #dedfe0; */
-    /* color: #333333; */
-    padding: 1rem
+    padding-top: 3rem;
 }
 
 .actions__container {
@@ -84,8 +71,9 @@ a {
     display: flex;
     max-width: 60rem;
     margin: 0 auto;
-    min-height: 3rem;
+    min-height: 7rem;
     padding: 0 1.6rem;
+    justify-content: center;
 }
 
 .actions__container--spaced {
@@ -96,11 +84,13 @@ a {
 
 .input {
     border: none;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-weight: 300;
-    height: 3rem;
+    height: 4rem;
+    margin-bottom: 4rem;
     margin-right: 1.6rem;
     padding: .4rem .8rem;
+    max-width: 22rem;
 }
 
 .checkbox {
@@ -113,18 +103,18 @@ a {
 }
 
 .button {
-    background: #7044a0;
+    background: #4B0082;
     border: none;
-    border-bottom: 2px solid #603a88;
+    border-bottom: 5px solid rgb(51, 2, 87);
     color: white;
     font-size: 1.4rem;
     font-weight: 300;
-    padding: .8rem;
+    padding: 2rem;
     transition: background .3s ease, color .3s ease;
 }
 
 .button:hover {
-    background: #5F3A87;
+    background: rgb(51, 2, 87);
 }
 
 .button--secondary {
@@ -145,6 +135,7 @@ a {
 .button--text:hover {
     background: none;
     color: white;
+    font-size: 1.7rem;
     text-decoration: underline;
 }
 
@@ -175,18 +166,20 @@ a {
 /* Note List Item */
 
 .list-item {
-    text-decoration: none;
-    color: #fafafa;
-    cursor: pointer;
     background: #353239;
     border: 1px solid #423e47;
+    color: #fafafa;
+    cursor: pointer;
+    display: flex;
+    height: 8rem;
     margin: 1.6rem 0;
     padding: 1rem 1.6rem;
-    display: block;
     transition: background .3s ease;
-    display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
+    text-decoration: none;
+    word-break: break-all;
+    overflow: hidden;
 }
 
 .list-item__container {
@@ -221,5 +214,54 @@ a {
 }
 
 .empty-message {
+    font-size: 2.5rem;
+    font-family: 'Spectral', serif;
+    color: goldenrod;
     margin: 3.2rem 0;
+}
+
+/* media queries */
+@media (min-width: 300px) and (orientation: portrait) {
+    html {
+        font-size: 70%;
+      }
+    
+    .input {
+        font-size: 1.8rem;
+        height: 5rem;
+        padding: 3rem .5rem;
+        min-width: 10rem;
+    }
+    body {
+        text-align: center;
+    }
+    .button {
+        margin: 0 0 2rem 0;
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+    html {
+        font-size: 70%;
+      }
+    body{
+        text-align: center;
+    }
+    .container {
+        justify-content: center;
+      }
+      .button {
+        margin: 0 0 2rem 0;
+        padding: 3rem;
+    }
+    .input {
+        font-size: 1.8rem;
+        height: 5rem;
+        padding: 3rem .5rem;
+        min-width: 10rem;
+    }
+    .button--text {
+        font-size: 2rem;
+    }
 }
